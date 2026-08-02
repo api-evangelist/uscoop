@@ -1,7 +1,27 @@
 aid: uscoop
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/uscoop.png
 name: uScoop
-description: uScoop is a company surfaced as a portfolio company of 500-global and added to the API Evangelist
-  network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: uScoop appears in the 500 Global portfolio mapped to the website
+  tnuck.com. The original uScoop was a 2010 college-student daily-deals startup
+  (theuscoop.com, later uscoop.com); both domains are now offline or parked for
+  sale, and the recorded website today is the Tuckernuck online retail
+  storefront on Shopify. This profile documents the live API and agent surface
+  of that recorded website, which publishes llms.txt and agents.md agent
+  instructions, a Universal Commerce Protocol (UCP) merchant profile, a live
+  MCP shopping endpoint, and OpenID Connect / OAuth 2.0 discovery documents
+  for customer accounts.
 url: https://raw.githubusercontent.com/api-evangelist/uscoop/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -9,12 +29,42 @@ x-backed-by:
 - 500-global
 x-tier: stub
 x-tier-reason: portfolio-lead
+x-identity-note: The 500 Global portfolio source pairs the name uScoop with
+  https://tnuck.com (Tuckernuck). Probed 2026-07-21 - uscoop.com redirects to a
+  GoDaddy for-sale page (307) and theuscoop.com does not resolve; the
+  uScoop-Tuckernuck relationship (rebrand vs source-data mismatch) is
+  unconfirmed. All artifacts in this repo were fetched from tnuck.com, the
+  website of record in the source data.
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
-apis: []
+- Retail
+- Fashion
+- eCommerce
+- Agentic Commerce
+- Shopping
+apis:
+- name: Storefront Agent Commerce (UCP over MCP)
+  description: Universal Commerce Protocol shopping service exposed over MCP by
+    the tnuck.com Shopify storefront - catalog search, cart, checkout,
+    fulfillment, discounts, and orders, with buyer-approved payment. Discovery
+    at /.well-known/ucp; agent instructions at /llms.txt and /agents.md.
+  humanURL: https://tnuck.com/agents.md
+  baseURL: https://tnuck.com/api/ucp/mcp
+  tags:
+  - Commerce
+  - MCP
+  - UCP
+  - Shopping
+  properties:
+  - type: Documentation
+    url: https://tnuck.com/agents.md
+  - type: MCPServer
+    url: mcp/uscoop-mcp.yml
+  - type: WellKnown
+    url: well-known/uscoop-ucp.json
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -23,3 +73,36 @@ maintainers:
 common:
 - type: Website
   url: https://tnuck.com
+- type: Documentation
+  url: https://tnuck.com/agents.md
+- type: MCPServer
+  url: mcp/uscoop-mcp.yml
+- type: LLMsTxt
+  url: llms/uscoop-llms.txt
+- type: WellKnown
+  url: well-known/uscoop-well-known.yml
+- type: Authentication
+  url: authentication/uscoop-authentication.yml
+- type: OAuthScopes
+  url: scopes/uscoop-scopes.yml
+- type: Conformance
+  url: conformance/uscoop-conformance.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: DomainSecurity
+  url: security/uscoop-domain-security.yml
+- type: PrivacyPolicy
+  url: https://tnuck.com/policies/privacy-policy
+- type: TermsOfService
+  url: https://tnuck.com/policies/terms-of-service
+- type: Login
+  url: https://tnuck.com/account
+- type: Support
+  url: https://tnuck.com/pages/contact-us
+- type: Blog
+  url: https://tnuck.com/blogs/news
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 12
+  pass: local-v1

@@ -1,0 +1,38 @@
+generated: '2026-07-21'
+method: searched
+standards:
+- id: ucp
+  name: Universal Commerce Protocol
+  conforms: true
+  versions:
+  - '2026-04-08'
+  - '2026-01-23'
+  evidence: GET https://tnuck.com/.well-known/ucp returned 200 with a UCP merchant
+    profile (shopping service over MCP, checkout/fulfillment/discount/cart/order
+    capabilities); fetched 2026-07-21, saved at well-known/uscoop-ucp.json.
+- id: oidc
+  name: OpenID Connect discovery
+  conforms: true
+  evidence: GET https://tnuck.com/.well-known/openid-configuration returned 200
+    (issuer https://shopify.com/authentication/63049990366); saved at
+    well-known/uscoop-openid-configuration.json.
+- id: oauth2
+  name: OAuth 2.0 Authorization Server Metadata (RFC 8414)
+  conforms: true
+  evidence: GET https://tnuck.com/.well-known/oauth-authorization-server returned
+    200; saved at well-known/uscoop-oauth-authorization-server.json.
+- id: mcp
+  name: Model Context Protocol
+  conforms: true
+  evidence: POST https://tnuck.com/api/ucp/mcp answered JSON-RPC 2.0 (UCP shopping
+    service transport); probe recorded in mcp/uscoop-mcp.yml.
+- id: llms-txt
+  name: llms.txt
+  conforms: true
+  evidence: GET https://tnuck.com/llms.txt returned 200 (mirrors /agents.md);
+    saved verbatim at llms/uscoop-llms.txt.
+- id: rfc9116-security-txt
+  name: security.txt (RFC 9116)
+  conforms: false
+  evidence: GET https://tnuck.com/.well-known/security.txt returned 404 on
+    2026-07-21.

@@ -1,0 +1,13 @@
+generated: '2026-07-21'
+method: generated
+skills:
+- file: uscoop-agent-shopping.md
+  name: Shop the tnuck.com storefront as an agent (UCP/MCP)
+  api: https://tnuck.com/api/ucp/mcp
+  operations:
+  - search_catalog
+  - create_cart
+  - create_checkout
+  - update_checkout
+  - complete_checkout
+  source: https://tnuck.com/llms.txt

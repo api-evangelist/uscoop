@@ -1,0 +1,31 @@
+generated: '2026-07-21'
+method: searched
+source: https://tnuck.com/.well-known/openid-configuration
+docs: https://tnuck.com/.well-known/oauth-authorization-server
+summary:
+  types:
+  - oauth2
+  - openIdConnect
+  oauth2_flows:
+  - authorizationCode
+schemes:
+- name: shopify-customer-accounts-oidc
+  type: openIdConnect
+  openIdConnectUrl: https://tnuck.com/.well-known/openid-configuration
+  issuer: https://shopify.com/authentication/63049990366
+  sources:
+  - well-known/uscoop-openid-configuration.json
+- name: shopify-customer-accounts-oauth2
+  type: oauth2
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://shopify.com/authentication/63049990366/oauth/authorize
+    tokenUrl: https://shopify.com/authentication/63049990366/oauth/token
+  sources:
+  - well-known/uscoop-oauth-authorization-server.json
+notes:
+- Customer-account authentication is delegated to Shopify (issuer
+  shopify.com/authentication/63049990366); discovery documents were fetched
+  live from tnuck.com on 2026-07-21.
+- The UCP MCP commerce endpoint additionally requires an agent profile URI
+  (see mcp/uscoop-mcp.yml probe).

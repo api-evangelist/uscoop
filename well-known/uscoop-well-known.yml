@@ -1,0 +1,31 @@
+generated: '2026-07-21'
+method: searched
+host: https://tnuck.com
+note: Host probed is tnuck.com, the website the 500 Global portfolio source records
+  for uScoop (the site is the Tuckernuck Shopify storefront; see apis.yml x-identity-note).
+documents:
+- path: /.well-known/security.txt
+  status: 404
+- path: /.well-known/openid-configuration
+  status: 200
+  file: uscoop-openid-configuration.json
+- path: /.well-known/oauth-authorization-server
+  status: 200
+  file: uscoop-oauth-authorization-server.json
+- path: /.well-known/api-catalog
+  status: 404
+- path: /.well-known/ai-plugin.json
+  status: 404
+- path: /.well-known/ucp
+  status: 200
+  file: uscoop-ucp.json
+  note: Universal Commerce Protocol (UCP) merchant profile - versions 2026-04-08
+    and 2026-01-23, MCP shopping service endpoint.
+- path: /llms.txt
+  status: 200
+  file: ../llms/uscoop-llms.txt
+- path: /agents.md
+  status: 200
+  note: Canonical agent-facing store description; /llms.txt mirrors it.
+- path: /robots.txt
+  status: 200

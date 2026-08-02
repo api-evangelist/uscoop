@@ -1,0 +1,45 @@
+generated: '2026-07-21'
+method: searched
+status: published
+source: https://tnuck.com/llms.txt
+server:
+  name: tnuck-ucp-shopping
+  transport: http
+  url: https://tnuck.com/api/ucp/mcp
+  canonical_endpoint: https://tnuckadmin.myshopify.com/api/ucp/mcp
+  protocol: Universal Commerce Protocol (UCP) shopping service over MCP
+  ucp_versions:
+  - '2026-04-08'
+  - '2026-01-23'
+  discovery: https://tnuck.com/.well-known/ucp
+  schema: https://ucp.dev/2026-04-08/services/shopping/mcp.openrpc.json
+  platform: Shopify (native UCP support)
+probe:
+  date: '2026-07-21'
+  request: POST /api/ucp/mcp tools/list
+  status: 422
+  note: Live JSON-RPC endpoint; responds with UCP error invalid_profile_url -
+    callers must present an agent profile URI to complete discovery.
+tools:
+- name: search_catalog
+  description: Search the store catalog for products matching buyer intent
+  source: https://tnuck.com/llms.txt
+- name: create_cart
+  description: Create a cart and add desired items
+  source: https://tnuck.com/llms.txt
+- name: create_checkout
+  description: Start the purchase flow
+  source: https://tnuck.com/llms.txt
+- name: update_checkout
+  description: Set shipping address and method
+  source: https://tnuck.com/llms.txt
+- name: complete_checkout
+  description: Finalize the purchase (buyer must approve payment)
+  source: https://tnuck.com/llms.txt
+notes:
+- Checkout requires human approval; agents must not complete payment without
+  explicit buyer consent.
+- MCP endpoint is rate-limited per IP; back off on 429 responses.
+- The store's llms.txt recommends personal-shopping agents install the Shop
+  skill (https://shop.app/SKILL.md) to transact via Shop Pay across Shopify
+  stores.
