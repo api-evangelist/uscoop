@@ -35,7 +35,7 @@ x-identity-note: The 500 Global portfolio source pairs the name uScoop with
   uScoop-Tuckernuck relationship (rebrand vs source-data mismatch) is
   unconfirmed. All artifacts in this repo were fetched from tnuck.com, the
   website of record in the source data.
-specificationVersion: '0.20'
+specificationVersion: '0.23'
 created: '2026-07-17'
 modified: '2026-07-21'
 tags:
