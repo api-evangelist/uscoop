@@ -74,6 +74,11 @@ apis:
   tags:
   - Commerce
   - MCP
+  - Universal Commerce Protocol
+  - Shopping
+  tags_raw:
+  - Commerce
+  - MCP
   - UCP
   - Shopping
   properties:
