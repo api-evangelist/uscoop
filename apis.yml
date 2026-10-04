@@ -88,6 +88,9 @@ apis:
     url: mcp/uscoop-mcp.yml
   - type: WellKnown
     url: well-known/uscoop-ucp.json
+  x-surface: platform-generated
+  x-platform: shopify
+  x-platform-surface: ucp
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
