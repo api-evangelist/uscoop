@@ -1,0 +1,16 @@
+generated: '2026-10-12'
+method: none
+source:
+- https://zapier.com/apps/uscoop/integrations
+- https://n8n.io/integrations/uscoop/
+- https://composio.dev/toolkits/uscoop
+- https://monid.ai/tools/uscoop
+checked:
+- https://composio.dev/toolkits/uscoop
+- https://monid.ai/tools/uscoop
+- https://n8n.io/integrations/uscoop/
+- https://zapier.com/apps/uscoop/integrations
+summary: null
+marketplace_apps: []
+edges: []
+templates: []
